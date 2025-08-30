@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodip Hore - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styls.css">
+</head>
+<body class="text-gray-300">
+    <canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full" style="z-index: -1;"></canvas>
+
+    <!-- Header -->
+    <header class="bg-[#0a192f]/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold text-cyan-400 neon-text">Prodip Hore</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="index.html#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="index.html#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="index.html#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                <a href="assets/cv.pdf" class="text-cyan-400 border border-cyan-400 px-3 py-1 rounded-md hover:bg-cyan-400 hover:text-[#0a192f] transition-colors">View Resume</a>
+                <a href="assets/cv.pdf" download class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-1 px-3 rounded-md transition-transform transform hover:scale-105">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pt-24">
+
+        <!-- এখানে Projects Section শুরু হয়েছে -->
+        <section id="projects" class="py-20 fade-in-section is-visible">
+            <h2 class="text-4xl font-bold text-center mb-12 neon-text">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+                <!-- Project 1 -->
+                <div class="neon-box tilt-effect floating-image">
+                    <div class="w-full  bg-gray-700 flex items-center justify-center text-white font-bold"><img class="w-full" src="assets/Screenshot From 2025-08-30 00-39-45.png" alt=""></div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-2xl font-bold text-cyan-400 drop-shadow-[0_0_10px_cyan] hover:scale-105 transform transition-all duration-300">Payoo Mobile Banking App</h3>
+                        <p class="text-gray-300 hover:text-white transition-colors duration-300">A functional mobile banking prototype that allows users to add money, cash out, and view transaction history. Users can also delete transactions and see the transaction timestamp. Demo credentials: Mobile number: 123456789, PIN: 1234.</p>
+                        <a href="https://prodip2005.github.io/Mobile-Banking-App/" target="_blank" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110">GitHub / Live Link</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Project 2 -->
+                <div class="neon-box tilt-effect floating-image">
+                    <div class="w-full bg-gray-700 flex items-center justify-center text-white font-bold"><img class="w-full" src="assets/Screenshot From 2025-08-30 00-47-53.png" alt=""></div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-2xl font-bold text-cyan-400 drop-shadow-[0_0_10px_cyan] hover:scale-105 transform transition-all duration-300">Emergency Service Calling Website</h3>
+                        <p class="text-gray-300 hover:text-white transition-colors duration-300">This is an interactive web application designed to simulate a realistic emergency service calling system for urgent situations. Users start with 100 virtual coins, and each emergency call deducts 20 coins from their balance. The app displays the caller’s name and phone number for each call, providing a clear and organized call log. If the user’s coin balance falls below 20, further calls are automatically disabled to ensure proper resource management.
+
+                        The application also includes a heart button feature that allows users to gain extra lives, enhancing interactivity and user engagement significantly. All call activities are tracked in the Caller History section, where users can see a detailed log of every call made. A Clear History button allows users to reset the log at any time, while a Copy button enables quick and convenient copying of phone numbers for ease of use.
+
+                        This project highlights skills in dynamic UI design, event handling, state management, and real-time updates, making it an excellent demonstration of building interactive, responsive, and user-friendly web applications.</p>
+                        <a href="https://prodip2005.github.io/Simple-Emergency_service-Website--Updateable-/" target="_blank" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110">GitHub / Live Link</a>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <!-- Project 3 -->
+                <div class="neon-box tilt-effect floating-image">
+                    <div class="w-full bg-gray-700 flex items-center justify-center text-white font-bold"><img class="w-full" src="assets/Screenshot From 2025-08-30 00-55-06.png" alt=""></div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-2xl font-bold text-cyan-400 drop-shadow-[0_0_10px_cyan] hover:scale-105 transform transition-all duration-300">Flower Shop</h3>
+                        <p class="text-gray-300 hover:text-white transition-colors duration-300">This is a fully responsive prototype website designed to showcase an online flower shop. It features multiple sections including Home, Shop, Cart, and About Us, providing a realistic and visually appealing layout for a commercial website. Users can browse flowers, filter by category, and add their favorite ones to the cart, and even explore options to join a branch for enhanced engagement.
+
+                        Although the website is a prototype and some functionalities are not yet fully implemented, it clearly demonstrates the structure, design, and responsive layout of a real e-commerce platform. This project marks my first responsive website, highlighting skills in HTML, CSS, responsive design, interactive UI, and modern web structuring.
+
+                        The project emphasizes a clean and engaging user interface, organized navigation, intuitive interactive elements, and thoughtful visual hierarchy, making it a strong foundation for future full-fledged e-commerce website development.</p>
+                        <a href="https://prodip2005.github.io/First-Responsive-Website/" target="_blank" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110">GitHub / Live Link</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- এখানে Footer শুরু হয়েছে -->
+    <footer class="text-center py-8 border-t border-gray-700">
+        <p>&copy; 2024 Prodip Hore. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tilt effect
+        const tiltElements = document.querySelectorAll('.tilt-effect');
+        tiltElements.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                card.style.boxShadow = `0 0 20px #67e8f9, 0 0 30px #06b6d4`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                card.style.boxShadow = '0 0 10px #67e8f9, 0 0 20px #06b6d4';
+            });
+        });
+
+        // Particle effect
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+
+        class Particle {
+            constructor(x, y, size, color, speedX, speedY) {
+                this.x = x; this.y = y; this.size = size; this.color = color;
+                this.speedX = speedX; this.speedY = speedY;
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+                this.x += this.speedX; this.y += this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = Math.random() * (innerWidth - size * 2) + size;
+                let y = Math.random() * (innerHeight - size * 2) + size;
+                let speedX = (Math.random() * 0.4) - 0.2;
+                let speedY = (Math.random() * 0.4) - 0.2;
+                let color = 'rgba(103, 232, 249, 0.5)';
+                particles.push(new Particle(x, y, size, color, speedX, speedY));
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+    });
+    </script>
+
+</body>
+</html>

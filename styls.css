@@ -1,0 +1,93 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a192f;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .neon-text {
+            color: #67e8f9;
+            text-shadow: 0 0 5px #67e8f9, 0 0 10px #67e8f9, 0 0 20px #06b6d4, 0 0 30px #06b6d4;
+        }
+        .neon-box {
+            border: 2px solid #67e8f9;
+            box-shadow: 0 0 10px #67e8f9, 0 0 20px #06b6d4;
+        }
+        .tilt-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-image {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes border-glow {
+          0% {
+            border-color: #67e8f9;
+            box-shadow: 0 0 5px #67e8f9, 0 0 10px #67e8f9, 0 0 15px #06b6d4;
+          }
+          50% {
+            border-color: #a5f3fc;
+            box-shadow: 0 0 15px #67e8f9, 0 0 25px #06b6d4, 0 0 35px #06b6d4;
+          }
+          100% {
+            border-color: #67e8f9;
+            box-shadow: 0 0 5px #67e8f9, 0 0 10px #67e8f9, 0 0 15px #06b6d4;
+          }
+        }
+        .animate-border-glow {
+          animation: border-glow 2s infinite;
+        }
+        .btn-shine {
+          position: relative;
+          overflow: hidden;
+        }
+        .btn-shine::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+          transition: all 650ms;
+        }
+        .btn-shine:hover::before {
+          left: 100%;
+        }
+
+        .neon-effect {
+    color: #0ff; /* Neon cyan color */
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff,
+        0 0 80px #0ff;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 40px #0ff,
+            0 0 80px #0ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
