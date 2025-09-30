@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styls.css">
 </head>
+<div class="floating-shape shape-1"></div>
+<div class="floating-shape shape-2"></div>
+
+<canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full" style="z-index: -1;"></canvas>
 <body class="text-gray-300">
+    <div id="animated-bg-mesh"></div>
     <canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full" style="z-index: -1;"></canvas>
 
     <!-- Header -->
     <header class="bg-[#0a192f]/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto flex justify-between items-center p-4">
-            <a href="#" class="text-2xl font-bold text-cyan-400 neon-text">Prodip Hore</a>
-            <nav class="hidden md:flex items-center space-x-6">
+            <a href="#" class="text-2xl font-bold text-cyan-400  animated-name">Prodip Hore</a>
+            <nav class="hidden md:flex items-center space-x-6 navbar-link-glow">
                 <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
                 <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
                 
@@ -31,7 +36,7 @@
         <section id="home" class="relative flex flex-col md:flex-row items-center justify-between min-h-screen text-center md:text-left">
             <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
             <div class="md:w-1/2 mb-10 md:mb-0 z-10">
-               <h1 class="text-5xl md:text-7xl font-bold mb-4 neon-effect">Prodip Hore</h1>
+               <h1 class="text-5xl md:text-7xl font-bold mb-4 animated-name2  wavy-underline-name">Prodip Hore</h1>
                 <p class="text-xl md:text-2xl text-cyan-400 mb-8"><span id="tagline"></span></p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="assets/cv.pdf" class="text-cyan-400 border border-cyan-400 font-semibold py-3 px-6 rounded-md hover:bg-cyan-400 hover:text-[#0a192f] transition-colors">View Resume</a>
@@ -40,7 +45,7 @@
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center z-10">
-    <div class="md:w-104 md:h-104 bg-gray-800 rounded-full flex items-center justify-center tilt-effect bg-gray-800/30 rounded-full shadow-lg overflow-hidden neon-box">
+    <div class="md:w-104 md:h-104 bg-gray-800 rounded-full flex items-center justify-center tilt-effect bg-gray-800/30 rounded-full shadow-lg overflow-hidden parallax-card">
         <img class="rounded-full md:h-[420px] md:w-[420px] h-[320px] w-[320px]" src="assets/1756364546766.jpeg" alt="">
     </div>
 </div>
@@ -50,8 +55,8 @@
         <!-- এখানে About Section শুরু হয়েছে -->
         <section id="about" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-center mb-12 neon-text">About Me</h2>
-            <div class="max-w-3xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg neon-box">
-                <p class="text-lg text-center leading-relaxed">
+            <div class="max-w-3xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg aurora-box">
+                <p class="text-lg text-center leading-relaxed glass-text">
                     Hi, I am Prodip Hore, a passionate learner and problem solver.
                     I am currently studying Computer Science and Engineering at Patuakhali Science and Technology University.
                     I love solving coding challenges, exploring modern web technologies, and I am highly interested in Machine Learning.
@@ -63,7 +68,7 @@
         <section id="skills" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-center mb-12 neon-text">My Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-800/30 p-6 rounded-lg shadow-lg neon-box">
+                <div class="bg-gray-800/30 p-6 rounded-lg shadow-lg aurora-box">
                     <h3 class="text-2xl font-bold mb-4 text-cyan-400">Programming Languages</h3>
                     <ul class="space-y-2">
                         
@@ -75,7 +80,7 @@
                         <li><i class="fab fa-python mr-2 text-cyan-400"></i>Python (Beginner)</li>
                     </ul>
                 </div>
-                <div class="bg-gray-800/30 p-6 rounded-lg shadow-lg neon-box">
+                <div class="bg-gray-800/30 p-6 rounded-lg shadow-lg aurora-box">
                     <h3 class="text-2xl font-bold mb-4 text-cyan-400">Web Technologies</h3>
                     <ul class="space-y-2">
                         <li><i class="fab fa-html5 mr-2 text-cyan-400"></i>HTML</li>
@@ -93,7 +98,7 @@
         <!-- The rest of the sections follow the same styling -->
         <section id="experience" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-center mb-12 neon-text">Experience</h2>
-            <div class="text-center max-w-2xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg neon-box">
+            <div class="text-center max-w-2xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg aurora-box">
                 <p class="text-lg">Web Development Projects – Programming Hero
 Completed 5 web development projects using HTML, CSS, JavaScript, and basic backend integration. All projects are available on GitHub
 .
@@ -108,7 +113,7 @@ Pursuing advanced web development courses and building personal projects to enha
 
         <section id="education" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-center mb-12 neon-text">Education</h2>
-            <div class="text-center max-w-2xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg neon-box">
+            <div class="text-center max-w-2xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg aurora-box">
                 <h3 class="text-2xl font-bold text-cyan-400">Patuakhali Science and Technology University (PSTU)</h3>
                 <p class="text-lg">Department: Computer Science and Engineering</p>
             </div>
@@ -116,7 +121,7 @@ Pursuing advanced web development courses and building personal projects to enha
 
         <section id="achievements" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-center mb-12 neon-text">Achievements / Certificates</h2>
-            <div class="text-center max-w-2xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg neon-box">
+            <div class="text-center max-w-2xl mx-auto bg-gray-800/30 p-8 rounded-lg shadow-lg aurora-box">
                 <p class="text-lg font-bold text-cyan-400 drop-shadow-[0_0_10px_cyan] animate-pulse">Here are my Certificates:</p>
                  <a href="assets/autocad-electrical-essentials-course-certificate.pdf"
                  class="inline-block bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110">AutoCad 1</a>
@@ -130,11 +135,11 @@ Pursuing advanced web development courses and building personal projects to enha
         <section id="languages" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-center mb-12 neon-text">Languages</h2>
             <div class="flex justify-center space-x-8">
-                <div class="text-center p-4 bg-gray-800/30 rounded-lg neon-box">
+                <div class="text-center p-4 bg-gray-800/30 rounded-lg aurora-box">
                     <p class="text-xl font-bold">English</p>
                     <p class="text-sm text-gray-400">(Fluently)</p>
                 </div>
-                <div class="text-center p-4 bg-gray-800/30 rounded-lg neon-box">
+                <div class="text-center p-4 bg-gray-800/30 rounded-lg aurora-box">
                     <p class="text-xl font-bold">Bangla</p>
                     <p class="text-sm text-gray-400">(Fluently)</p>
                 </div>
@@ -155,7 +160,7 @@ Pursuing advanced web development courses and building personal projects to enha
                         <a href="https://github.com/prodip2005" class="hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <form action="https://formsubmit.co/prodiphore2005@gmail.com" method="POST" class="bg-gray-800/30 p-8 rounded-lg shadow-lg neon-box">
+                <form action="https://formsubmit.co/prodiphore2005@gmail.com" method="POST" class="bg-gray-800/30 p-8 rounded-lg shadow-lg aurora-box">
                     <div class="mb-4">
                         <label for="name" class="block mb-2">Name</label>
                         <input type="text" id="name" name="name" class="w-full p-2 bg-gray-700 rounded border border-gray-600 focus:outline-none focus:border-cyan-500">

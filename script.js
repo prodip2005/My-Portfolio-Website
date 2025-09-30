@@ -11,17 +11,54 @@ document.addEventListener('DOMContentLoaded', function() {
         sections.forEach(section => observer.observe(section));
 
         // Typing effect
-        const taglineEl = document.getElementById('tagline');
-        const tagline = "CSE Student & Aspiring Machine Learning Engineer";
-        let i = 0;
-        function typeWriter() {
-            if (i < tagline.length) {
-                taglineEl.innerHTML += tagline.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        typeWriter();
+       // Typing effect (Updated for multiple taglines)
+const taglineEl = document.getElementById('tagline');
+// যে ট্যাগলাইনগুলো আপনি দেখাতে চান, সেগুলোর একটি অ্যারে তৈরি করুন
+const taglines = [
+    "CSE Student & Aspiring Machine Learning Engineer",
+    "I Build Modern Web Applications with React & Tailwind",
+    "Problem Solver & Competitive Programmer",
+    "Exploring the World of Machine Learning"
+];
+
+let taglineIndex = 0;
+let charIndex = 0;
+const typingSpeed = 75; // অক্ষরের টাইপিং গতি (মিলিসেকেন্ডে)
+const erasingSpeed = 50; // অক্ষরের মোছার গতি (মিলিসেকেন্ডে)
+const delayBeforeNext = 1500; // পরবর্তী ট্যাগলাইন দেখানোর আগে অপেক্ষা (মিলিসেকেন্ডে)
+
+function type() {
+    // বর্তমান ট্যাগলাইনটি
+    const currentTagline = taglines[taglineIndex];
+
+    if (charIndex < currentTagline.length) {
+        // টাইপ করা
+        taglineEl.innerHTML += currentTagline.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        // পুরোটা টাইপ করার পর, মোছা শুরু করতে অপেক্ষা করা
+        setTimeout(erase, delayBeforeNext);
+    }
+}
+
+function erase() {
+    const currentTagline = taglines[taglineIndex];
+
+    if (charIndex > 0) {
+        // মোছা
+        taglineEl.innerHTML = currentTagline.substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+    } else {
+        // মোছা শেষ হলে, পরের ট্যাগলাইনটিতে যাওয়া
+        taglineIndex = (taglineIndex + 1) % taglines.length;
+        setTimeout(type, 500); // নতুন ট্যাগলাইন টাইপ শুরু করতে ছোট বিরতি
+    }
+}
+
+// ফাংশনটি শুরু করা
+setTimeout(type, 1000); // পেজ লোড হওয়ার পর 1 সেকেন্ড অপেক্ষা করে শুরু হবে
 
         // Tilt effect
         const tiltElements = document.querySelectorAll('.tilt-effect');
@@ -99,4 +136,37 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.height = window.innerHeight;
             initParticles();
         });
+});
+    
+
+
+// Parallax 3D Card Effect (Replaces Tilt Effect)
+const cards = document.querySelectorAll('.parallax-card');
+
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // মাউস পজিশন x
+        const y = e.clientY - rect.top;  // মাউস পজিশন y
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // মাউসের অবস্থান থেকে রোটেট মান হিসাব করা
+        // মানগুলি সামান্য (যেমন 5 বা 10 ডিগ্রি) রাখা ভালো
+        const rotateX = (centerY - y) / 10; 
+        const rotateY = (x - centerX) / 10;
+        
+        // CSS transform প্রয়োগ
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        
+        // মাউস ঘোরানোর সাথে শ্যাডো ইফেক্ট পরিবর্তন (আরও গভীরতা বোঝাতে)
+        card.style.boxShadow = `0 ${15 - rotateX/2}px ${35 + Math.abs(rotateX)}px rgba(0, 0, 0, 0.7)`;
     });
+
+    card.addEventListener('mouseleave', () => {
+        // মাউস চলে গেলে কার্ডটি স্বাভাবিক অবস্থায় ফিরে যাবে
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
+    });
+});

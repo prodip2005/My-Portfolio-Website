@@ -91,3 +91,213 @@
         text-shadow: none;
     }
 }
+
+
+.animated-name {
+    /* Define a gradient with blue and green colors */
+    background: linear-gradient(90deg, #10b981, #34d399, #0ea5e9, #60a5fa);
+    /* Color Breakdown:
+       #10b981 (Emerald Green)
+       #34d399 (Medium Green)
+       #0ea5e9 (Sky Blue)
+       #60a5fa (Lighter Blue)
+    */
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Ensure you have the @keyframes defined, like in your original example */
+    animation: text-gradient 5s linear infinite;
+}
+
+/* If you didn't have the keyframes already, you'll need this: */
+@keyframes text-gradient {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+
+
+@keyframes aurora-box-glow {
+    0% {
+        border-color: #34d399; /* Green */
+        box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
+    }
+    33% {
+        border-color: #0ea5e9; /* Sky Blue */
+        box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+    }
+    66% {
+        border-color: #f59e0b; /* Amber/Orange */
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+    100% {
+        border-color: #34d399; /* Back to Green */
+        box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
+    }
+}
+
+.aurora-box {
+    /* আপনার ডার্ক ব্যাকগ্রাউন্ডের সাথে মিশ্রিত করার জন্য সামান্য স্বচ্ছতা */
+    background-color: #1c2b45; 
+    border: 2px solid #34d399; /* ইনিশিয়াল বর্ডার কালার */
+    border-radius: 12px;
+    
+    /* অ্যানিমেশন প্রয়োগ করুন */
+    animation: aurora-box-glow 15s infinite alternate ease-in-out;
+    transition: transform 0.3s;
+}
+
+/* Hover Effect - অ্যানিমেশনের সাথে সামঞ্জস্য রেখে হালকা উপরে ওঠা */
+.aurora-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.7);
+}
+
+
+
+/* Animated Wavy Underline */
+@keyframes wave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 50px; } /* 50px দূরে সরবে */
+}
+
+.wavy-underline-name {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px; /* আন্ডারলাইনের জন্য জায়গা */
+    
+    /* আন্ডারলাইন তৈরি */
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px; /* আন্ডারলাইনের পুরুত্ব */
+        
+        /* ঢেউ খেলানো প্যাটার্ন তৈরি করা */
+        background: repeating-linear-gradient(
+            -45deg,
+            #34d399, /* Green */
+            #34d399 2px,
+            transparent 2px,
+            transparent 4px
+        );
+        background-size: 10px 100%;
+        
+        /* অ্যানিমেশন যোগ করা */
+        animation: wave 1s linear infinite;
+        opacity: 0.8;
+    }
+}
+
+
+@keyframes float-and-rotate {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translate(50px, -50px) rotate(180deg); opacity: 0.7; }
+    100% { transform: translate(0, 0) rotate(360deg); opacity: 0.5; }
+}
+
+/* Base Style for Shapes */
+.floating-shape {
+    position: fixed;
+    z-index: -2;
+    filter: blur(20px); /* ঝাপসা করে দিন যাতে কন্টেন্ট হাইলাইট হয় */
+    opacity: 0.5;
+    animation: float-and-rotate 30s infinite ease-in-out alternate;
+}
+
+/* Individual Shape Styles */
+.shape-1 {
+    top: 10%;
+    left: 5%;
+    width: 200px;
+    height: 200px;
+    background-color: #0ea5e9; /* Sky Blue */
+    border-radius: 50%; /* Circle */
+}
+
+.shape-2 {
+    bottom: 15%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    background-color: #34d399; /* Green */
+    transform: rotate(30deg); /* Initial rotation */
+    animation-delay: 10s; /* একটু পরে শুরু হবে */
+}
+
+
+.parallax-card {
+    /* বেস স্টাইল: আপনার ডার্ক থিমের সাথে সামঞ্জস্যপূর্ণ */
+    background-color: #1a273b; /* ব্যাকগ্রাউন্ডের চেয়ে সামান্য হালকা */
+    border: 1px solid #34d399; /* একটি স্থির বর্ডার */
+    border-radius: 50%;
+    
+    /* Parallax ইফেক্টের জন্য প্রস্তুতি */
+    perspective: 1000px; /* ত্রিমাত্রিক গভীরতা সংজ্ঞায়িত করে */
+    transition: all 0.2s ease-out; /* মাউস সরানোর সময় স্মুথ ট্রানজিশন */
+    transform-style: preserve-3d; /* ভেতরের উপাদানগুলিকে 3D-তে রাখে */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* ইনিশিয়াল শ্যাডো */
+}
+
+/* শ্যাডোর জন্য একটি ক্লাস (ঐচ্ছিক, তবে সুন্দর লুক দেবে) */
+.parallax-card-shadow {
+    transition: all 0.2s ease-out;
+    
+}
+
+
+/* নামের জন্য নতুন গ্রেডিয়েন্ট টেক্সট অ্যানিমেশন */
+.animated-name2 {
+    background: linear-gradient(90deg, #4f46e5, #a855f7, #ec4899, #f59e0b);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-gradient 5s linear infinite;
+}
+
+
+
+
+
+/* --- Navbar Link Hover/Active Indicator --- */
+
+.navbar-link-glow {
+    position: relative;
+    /* transition: all 0.3s ease; (আপনার HTML এ `transition-colors` ক্লাসটি এই কাজটি করছে) */
+}
+
+/* Pseudo-element for the animated glow line */
+.navbar-link-glow::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* লিংকের নিচে জায়গা তৈরি */
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #67e8f9; /* আপনার Cyan কালার */
+    border-radius: 2px;
+    opacity: 0;
+    
+    /* Transition for smooth animation */
+    transition: width 0.3s ease, left 0.3s ease, opacity 0.3s ease;
+    
+    /* গ্লো ইফেক্ট */
+    box-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4; 
+}
+
+/* Hover effect: line expands and becomes visible */
+.navbar-link-glow:hover::after {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+
+/* Header Background Enhancement */
+header {
+    /* বর্তমান BG এর সাথে সামান্য ইনসেট শ্যাডো যোগ করা */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(103, 232, 249, 0.1);
+}
