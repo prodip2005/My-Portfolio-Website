@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://prodip2005.github.io/My-Portfolio-Website/sitemap.xml
